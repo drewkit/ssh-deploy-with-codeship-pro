@@ -1,0 +1,7 @@
+- name: Reinstate SSH Private Key File
+  service: ssh-helper
+  command: write
+
+- name: Private SSH Key now accessible via volume
+  service: app
+  command: ls /root/.ssh/id_rsa

@@ -1,0 +1,10 @@
+ssh-helper:
+  image: codeship/ssh-helper
+  encrypted_env_file: codeship.env.encrypted
+  volumes:
+    - ./:/keys/
+
+app:
+  image: busybox
+  volumes:
+    - ./.ssh:/root/.ssh
