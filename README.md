@@ -9,7 +9,7 @@
 
 ### Option A -- Generate a public and private ssh key
 
-- Modify the following command to your own email address and run in the project directory:
+- To generate a `codeship_deploy_key` and `codeship_deploy_key.pub` file, modify the following command with your own email address and run in your project directory:
 
 ```
 docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper generate "<YOUR_EMAIL>"
@@ -17,7 +17,7 @@ docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper generate "<YOUR_EMAIL>"
 
 ### Option B -- Use your own pre-existing private ssh key
 
-- Copy key to project directory and rename to `codeship_deploy_key`
+- Copy file to project directory and rename to `codeship_deploy_key`
 
 ## Prepare the Environment Variables file
 
@@ -34,7 +34,9 @@ docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper prepare
 ## Encrypt the Environment Variables file
 
 - Install our [jet cli tool](https://documentation.codeship.com/pro/jet-cli/installation/)
-- From your Project Settings > General page, scroll down to AES key section and click 'Download Key'
+- Setup your repository on your SCM of choice
+- Grab the git url of the repository and create a Codeship Pro project
+- From your Codeship 'Project Settings' > 'General' page, scroll down to AES key section and click 'Download Key'
 - Move downloaded key to your project directory and rename to `codeship.aes`
 - Add `codeship.aes` to your `.gitignore` file (!)
 - Add [any additional environment variables](https://documentation.codeship.com/pro/builds-and-configuration/environment-variables/#encrypting-your-environment-variables) to the `codeship.env` file
