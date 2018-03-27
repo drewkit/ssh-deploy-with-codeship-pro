@@ -1,7 +1,19 @@
-- name: Reinstate SSH Private Key File
+- name: reinstate SSH Private Key File
   service: ssh-helper
   command: write
 
-- name: Private SSH Key now accessible via volume
+- name: chmod to read only for root user
+  service: app
+  command: chmod 400 /root/.ssh/id_rsa
+
+- name: add Github.com to list of known hosts
+  service: app
+  command: /bin/bash -c "ssh-keyscan -H github.com >> /root/.ssh/known_hosts"
+
+- name: private SSH Key now accessible via volume
   service: app
   command: ls /root/.ssh/id_rsa
+
+# - name: SCM recognizes key
+#   service: app
+#   command: /bin/bash -c "ssh -T git@github.com 2>&1 | grep 'successfully authenticated'"
