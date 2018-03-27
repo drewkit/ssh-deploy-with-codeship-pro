@@ -1,6 +1,6 @@
 ssh-helper:
   image: codeship/ssh-helper
-  encrypted_env_file: codeship.env
+  encrypted_env_file: codeship.env.encrypted
   volumes:
     - ./:/keys/
 
