@@ -1,4 +1,4 @@
-# setting-ssh-private-key-in-pro
+# ssh-deploy-with-codeship-pro
 
 ## Initialize Project
 
