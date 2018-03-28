@@ -1,13 +1,8 @@
-ssh-helper:
-  image: codeship/ssh-helper
-  encrypted_env_file: codeship.env
-  volumes:
-    - ./:/keys/
-
 app:
   build:
     image: test-app
     dockerfile: Dockerfile
   volumes:
     - ./.ssh:/root/.ssh
-  cached: true
+    - ./deployment:/deployment
+  encrypted_env_file: codeship.env.encypted
