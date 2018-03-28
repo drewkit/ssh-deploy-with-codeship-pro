@@ -27,7 +27,7 @@ docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper generate "<YOUR_EMAIL>"
 docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper prepare
 ```
 
-- Process will store `SSH_PRIVATE_KEY` value as a one liner entry into the `codeship.env` file. If `codeship.env` already exists, the `SSH_PRIVATE_KEY` entry will be appended to it.
+- Process will store `PRIVATE_SSH_KEY` value as a one liner entry into the `codeship.env` file. If `codeship.env` already exists, the `PRIVATE_SSH_KEY` entry will be appended to it.
 - Remove the `codeship_deploy_key` (!)
 - Add `codeship.env` to your `.gitignore` file (!)
 
