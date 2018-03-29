@@ -15,6 +15,12 @@
   service: app
   command: /bin/bash -c "ssh -T git@github.com 2>&1 | grep 'successfully authenticated'"
 
-# - name: test a deployment via scp
-#   service: app
-#   command: scp -r /deployment dvader@deathstar.com:~/deployment
+# - name: test a deployment via scp # first add public key to deathstar.com's known hosts
+#   type: serial
+#   steps:
+#     - name: add deathstar.com to list of known hosts
+#       service: app
+#       command: /bin/bash -c "ssh-keyscan -H deathstar.com >> /root/.ssh/known_hosts"
+#     - name: perform deployment with contents of deployment folder
+#       service: app
+#       command: scp -r /deployment dvader@deathstar.com:~/deployment
