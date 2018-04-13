@@ -5,4 +5,4 @@ app:
   volumes:
     - ./.ssh:/root/.ssh
     - ./deployment:/deployment
-  encrypted_env_file: codeship.env.encypted
+  encrypted_env_file: codeship.env.encrypted
