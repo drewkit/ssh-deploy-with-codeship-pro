@@ -17,7 +17,7 @@ docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper generate "<YOUR_EMAIL>"
 
 ### Option B -- Use your own pre-existing private ssh key
 
-- Copy file to project directory and rename to `codeship_deploy_key`
+- Copy file to project directory and rename to `codeship_deploy_key` (must be a key that does not require a passphrase)
 
 ## Prepare the Environment Variables file
 
