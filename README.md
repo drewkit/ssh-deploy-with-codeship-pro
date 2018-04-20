@@ -33,7 +33,7 @@ docker run -it --rm -v $(pwd):/keys/ codeship/ssh-helper prepare
 
 ## Encrypt the Environment Variables file
 
-- Install our [jet cli tool](https://documentation.codeship.com/pro/jet-cli/installation/)
+- Install our [jet cli tool](https://documentation.codeship.com/pro/jet-cli/installation/) on your local machine
 - Setup your repository on your SCM of choice
 - Grab the git url of the repository and create a Codeship Pro project
 - From your Codeship 'Project Settings' > 'General' page, scroll down to AES key section and click 'Download Key'
